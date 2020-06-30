@@ -17,6 +17,9 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
+import com.curso.minhasFinancas.enums.StatusLancamento;
+import com.curso.minhasFinancas.enums.TipoLancamento;
+
 import lombok.Builder;
 import lombok.Data;
 
