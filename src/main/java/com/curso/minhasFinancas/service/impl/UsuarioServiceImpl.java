@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.curso.minhasFinancas.model.entity.Usuario;
 import com.curso.minhasFinancas.model.repository.UsuarioRepository;
@@ -12,9 +12,10 @@ import com.curso.minhasFinancas.service.UsuarioService;
 import com.curso.minhasFinancas.service.exceptions.ErroAutenticacao;
 import com.curso.minhasFinancas.service.exceptions.RegraNegocioException;
 
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 	
-	@Autowired
+//	@Autowired
 	private UsuarioRepository repository;
 
 	public UsuarioServiceImpl(UsuarioRepository repository) {

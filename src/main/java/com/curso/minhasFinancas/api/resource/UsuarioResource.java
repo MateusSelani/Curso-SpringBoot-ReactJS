@@ -1,7 +1,5 @@
 package com.curso.minhasFinancas.api.resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,14 +17,13 @@ import com.curso.minhasFinancas.service.exceptions.RegraNegocioException;
 public class UsuarioResource {
 
 	private UsuarioService service;
-
-	public UsuarioResource(@RequestBody UsuarioService service) {
-		super();
+	
+	public UsuarioResource(UsuarioService service) {
 		this.service = service;
 	}
 
 	@PostMapping
-	public ResponseEntity salvar(UsuarioDTO dto) {
+	public ResponseEntity salvar(@RequestBody UsuarioDTO dto) {
 
 		Usuario usuario = Usuario.builder().nome(dto.getEmail()).senha(dto.getSenha()).build();
 
